@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PERSONAL PORTFOLIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(5, 5, 66);
+            color: white;
+            font-family: "Poppins", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(25, 25, 124);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover, nav ul li a.active-link {
+            font-size: 1.05rem;
+            color: lavender;
+            border-bottom: 2px solid rgb(153, 68, 234);
+            padding-bottom: 5px;
+        }
+        
+        .left {
+            font-size: 1.5rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Core Show/Hide Section Logic */
+        .content-section {
+            display: none; /* Hides the section by default */
+            animation: fadeIn 0.5s ease; /* Adds a clean transition effect */
+        }
+
+        .content-section.active {
+            display: block; /* Only displays when it has the active class */
+        }
+
+        /* Home section custom layouts */
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            margin: 80px 0;
+            align-items: center;
+        }
+        
+        .firstSection > div {
+            width: 45%;
+        }
+        
+        .leftSection { 
+            font-size: 3rem;
+        }
+        
+        .rightSection img {
+            width: 80%;     
+        }
+        
+        .purple {
+            color: rgb(153, 68, 234);
+        }
+        
+        #element {
+            color: rgb(153, 68, 234);
+        }
+
+        /* Styles for secondary pages */
+        .inner-content {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .inner-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: rgb(153, 68, 234);
+        }
+
+        .inner-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            line-height: 1.6;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .skills-list li {
+            background-color: rgb(25, 25, 124);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .footer {
+            display: flex ;
+            margin: 23px 122px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Sameera's portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home" class="nav-link active-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>      
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact Me</a></li> 
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="content-section active">
+            <div class="firstSection">
+                <div class="leftSection">Hi, My name is <span class="purple">Sameera</span>
+                    <div>and I am</div>
+                    <span id="element"></span>
+                </div>
+                <div class="rightSection">
+                    <img src="bg.png" alt="Background Image">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <div class="inner-content">
+                <h2>About Me</h2>
+                <p>Hello! I am Sameera. I love creating beautiful, clean, and user-friendly digital architectures. I combine creative design perspectives with solid engineering fundamentals to construct memorable web experiences.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section">
+            <div class="inner-content">
+                <h2>My Skills</h2>
+                <p>Here are some tech stacks and tools I specialize in:</p>
+                <ul class="skills-list">
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Responsive Web Design</li>
+                    <li>Graphic Designing</li>
+                    <li>Python</li>
+                    <li>C</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <div class="inner-content">
+                <h2>Projects</h2>
+                <p>Check out some of my recent assignments and project works:</p>
+                <div style="margin-top: 20px;">
+                    <h3>1. Personal Portfolio Website</h3>
+                    <p style="font-size: 1rem; color: #ccc;">Built using modern HTML, CSS properties, and custom interactive JavaScript features.</p>
+                    <h3>2.Hospital Management system</h3>
+                    <p style="font-size: 1rem; color: #ccc;">Built using Python with Database connectivity.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="inner-content">
+                <h2>Contact Me</h2>
+                <p>Want to work together or have questions? Reach out anytime!</p>
+                <p style="font-weight: 600;">Email: srijakorikana@gmail.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first"></div>
+            <div class="footer-second"></div>
+            <div class="footer-third"></div>
+            <div class="footer-fourth"></div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web developer', 'Graphic designer', 'Web designer'],
+            typeSpeed: 50,
+            loop: true // Added loop so the animation keeps playing
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevents page from jumping or reloading
+
+                // 1. Remove active underline status from all links
+                document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active-link'));
+                
+                // 2. Add highlight state to clicked navigation item
+                this.classList.add('active-link');
+
+                // 3. Remove active presentation styling from current sections
+                document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+
+                // 4. Retrieve targeted ID string value and make targeted element visible
+                const targetId = this.getAttribute('href'); 
+                document.querySelector(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
