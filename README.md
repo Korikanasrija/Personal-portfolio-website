@@ -31,14 +31,13 @@ Role in Web Development:
 Front end developers work closely with designers for layout and look, and with back end developers (who handle data and server logic) to connect the visible part of the site to its underlying functionality.
 
 Complete Workflow Summary
-Component  |    Purpose         |              Example
-__________ | __________________ | _______________________________________________
-HTML	     |Structure & Content |Navigation menu, text sections, images
-__________ |___________________ | _______________________________________________
-CSS        |Styling & Layout	  |Colors (blue/purple), flexbox layout, animations
-__________ | __________________ | _______________________________________________
-JavaScript |	Interactivity	    |Click events, section switching, typing effect
-__________ | __________________ | _______________________________________________
+Component	Purpose	Example
+HTML-Structure & Content	
+    -Navigation menu, text sections, images
+CSS-Styling & Layout	
+    -Colors (blue/purple), flexbox layout, animations
+JavaScript-Interactivity	
+          -Click events, section switching, typing effect
 How They Work Together:
 
 HTML creates 5 sections (Home, About, Skills, Projects, Contact)
