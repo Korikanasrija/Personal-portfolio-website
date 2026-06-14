@@ -15,7 +15,6 @@ Front end development is the practice of creating the part of a website or web a
 
 Key Aspects of Front End Development:
 Languages Used:
-
 *HTML* (HyperText Markup Language): The structure and content of webpages.
 *CSS* (Cascading Style Sheets): The visual styling and appearance of webpages.
 *JavaScript*: Makes webpages interactive (e.g., forms that respond to user input, dynamic updates).
@@ -30,3 +29,20 @@ Making sure content is accessible to all users, including those with disabilitie
 Role in Web Development:
 
 Front end developers work closely with designers for layout and look, and with back end developers (who handle data and server logic) to connect the visible part of the site to its underlying functionality.
+
+Complete Workflow Summary
+Component  |    Purpose         |              Example
+__________ | __________________ | _______________________________________________
+HTML	     |Structure & Content |Navigation menu, text sections, images
+__________ |___________________ | _______________________________________________
+CSS        |Styling & Layout	  |Colors (blue/purple), flexbox layout, animations
+__________ | __________________ | _______________________________________________
+JavaScript |	Interactivity	    |Click events, section switching, typing effect
+__________ | __________________ | _______________________________________________
+How They Work Together:
+
+HTML creates 5 sections (Home, About, Skills, Projects, Contact)
+CSS styles them with dark blue background, hides all except Home
+JavaScript listens for click events on nav links and switches visible sections
+Typed.js animates the job title text on the home page
+All combine to create a smooth, interactive single-page portfolio
