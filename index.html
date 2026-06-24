@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -264,6 +264,7 @@
 
         .grid-2 {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: start;
         }
 
         .grid-3 {
@@ -275,6 +276,9 @@
             padding: 24px;
             border-radius: 16px;
             transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .project-card:hover,
@@ -299,11 +303,65 @@
             color: #f4f4ff;
             line-height: 1.8;
             font-size: 0.98rem;
+            margin-bottom: 15px;
         }
 
         .info-card ul {
             padding-left: 20px;
             margin-top: 10px;
+        }
+
+        /* Dynamic Project Buttons Styling */
+        .btn-project {
+            align-self: flex-start;
+            margin-top: auto;
+            text-decoration: none;
+            color: #d7ccff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(186, 120, 255, 0.4);
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: 0.3s ease;
+            background: rgba(153, 68, 234, 0.05);
+        }
+
+        .btn-project:hover {
+            background: rgb(153, 68, 234);
+            color: white;
+            border-color: rgb(153, 68, 234);
+        }
+
+        .vlsi-links, .cisco-links, .nptel-links, .workshop-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .vlsi-links a, .cisco-links a, .nptel-links a, .workshop-links a {
+            text-decoration: none;
+            color: #d7ccff;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .vlsi-links a:hover, .cisco-links a:hover, .nptel-links a:hover, .workshop-links a:hover {
+            color: rgb(186, 120, 255);
+            padding-left: 4px;
+        }
+
+        .cisco-wrapper, .nptel-wrapper {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .cisco-title, .nptel-title {
+            color: #fff !important;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
         }
 
         /* Contact */
@@ -407,7 +465,6 @@
 
 <body>
 
-    <!-- Header -->
     <header>
         <nav>
             <div class="left">Srija's Portfolio</div>
@@ -427,7 +484,6 @@
         </nav>
     </header>
 
-    <!-- HOME -->
     <section id="home">
         <div class="firstSection">
             <div class="leftSection">
@@ -446,17 +502,16 @@
             </div>
 
             <div class="rightSection">
-                <img src="srija_blazer.jpeg" alt="Sameera Profile Photo" class="profile-photo">
+                <img src="srija_blazer.jpeg" alt="Srija Profile Photo" class="profile-photo">
             </div>
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="card">
             <p class="about-text">
-                I am <b>Korikana Srija (Sameera)</b>, an Electronics and Communication Engineering student at
+                I am <b>Korikana Srija</b>, an Electronics and Communication Engineering student at
                 <b>Vignan’s Institute of Information Technology</b> with a strong academic record and a growing
                 passion for software development, front-end design, VLSI, and problem solving.
                 I enjoy blending creativity with technical skills to build useful and impactful projects.
@@ -467,14 +522,13 @@
         </div>
     </section>
 
-    <!-- EDUCATION -->
     <section id="education">
         <h2 class="section-title">Education</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <h3>B.Tech in Electronics and Communication Engineering</h3>
                 <span>2023 – Present | Vignan’s Institute of Information Technology (Autonomous), Duvvada</span>
-                <p><b>CGPA:</b> 9.33 (up to 3-1)</p>
+                <p><b>CGPA:</b> 9.33 (up to 3-2)</p>
             </div>
 
             <div class="timeline-item">
@@ -491,7 +545,6 @@
         </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills">
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
@@ -514,7 +567,6 @@
                     <li>VHDL</li>
                     <li>SystemVerilog</li>
                     <li>PCB Design</li>
-                    <li>VLSI Basics</li>
                 </ul>
             </div>
 
@@ -527,15 +579,18 @@
                     <li>KiCad</li>
                     <li>Arduino IDE</li>
                     <li>MySQL</li>
+                    <li>Matlab</li>
+                    <li>Keil micro vision</li>
+                    <li>Proteus</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects">
         <h2 class="section-title">Projects</h2>
         <div class="grid-2">
+
             <div class="project-card">
                 <h3>Smart Safety Pendant System</h3>
                 <p>
@@ -543,6 +598,7 @@
                     real-time location tracking and communication. Implemented dual-button functionality
                     for sending alerts and making emergency calls during emergencies.
                 </p>
+                <a href="https://github.com/Korikanasrija/Smart-safety-pendant-system-" target="_blank" class="btn-project">View Project file ↗</a>
             </div>
 
             <div class="project-card">
@@ -552,6 +608,7 @@
                     to manage doctor and patient records efficiently. Included both Admin and User modes
                     for better usability and record handling.
                 </p>
+                <a href="https://drive.google.com/file/d/1NbtiSZs9ALccRBulD2d22TEij4j9pYus/view?usp=sharing" target="_blank" class="btn-project">View Project File ↗</a>
             </div>
 
             <div class="project-card">
@@ -564,12 +621,45 @@
             </div>
 
             <div class="project-card">
+                <h3>Digital Watch</h3>
+                <p>
+                    Built a real-time basic <b>Digital Watch</b> using <b>HTML, CSS, and JavaScript</b>. The project
+                    displays the current hours, minutes, seconds and milliseconds dynamically with a background.
+                </p>
+                <a href="https://github.com/Korikanasrija/Digital-clock" target="_blank" class="btn-project">View Project file ↗</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Personal Finance Tracker</h3>
+                <p>
+                    Developed a <b>Personal Finance Tracker</b> using <b>HTML, CSS, and JavaScript</b> to record
+                    income and expenses, calculate balance, and organize financial transactions in a simple interface.
+                </p>
+                <a href="https://github.com/Korikanasrija/Personal-finance-tracker" target="_blank" class="btn-project">View Project file ↗</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Currency Converter</h3>
+                <p>
+                    Designed a <b>Currency Converter</b> using <b>HTML, CSS, and JavaScript</b> that converts values
+                    between different currencies through user input and conversion logic.
+                </p>
+                <a href="https://github.com/Korikanasrija/Currency-converter" target="_blank" class="btn-project">View Project file ↗</a>
+            </div>
+
+            <div class="project-card">
                 <h3>VLSI Design Projects</h3>
                 <p>
                     Designed and implemented digital systems such as <b>ALU, RAM, Pipeline Processor,
                     and Digital Filter</b> using <b>Verilog</b>. These projects focus on digital logic design,
                     simulation, and hardware implementation concepts.
                 </p>
+                <div class="vlsi-links">
+                    <a href="https://github.com/Korikanasrija/CODETECH-TASK1" target="_blank">📄 CodeTech Task 1 ↗</a>
+                    <a href="https://github.com/Korikanasrija/CODETECH-TASK2" target="_blank">📄 CodeTech Task 2 ↗</a>
+                    <a href="https://github.com/Korikanasrija/CODETECH-TASK3" target="_blank">📄 CodeTech Task 3 ↗</a>
+                    <a href="https://github.com/Korikanasrija/CODETECH-TASK4" target="_blank">📄 CodeTech Task 4 ↗</a>
+                </div>
             </div>
 
             <div class="project-card">
@@ -580,10 +670,10 @@
                     understanding of RF design and communication systems.
                 </p>
             </div>
+
         </div>
     </section>
 
-    <!-- INTERNSHIPS -->
     <section id="internships">
         <h2 class="section-title">Internship Experience</h2>
         <div class="grid-3">
@@ -594,10 +684,9 @@
                     Completed a six-week on-site internship focused on
                     <b>Instrumentation and Control Systems</b>.
                 </p>
-                <ul>
-                    <li>CDU 3 Unit</li>
-                    <li>CPP Unit</li>
-                </ul>
+                <div class="workshop-links">
+                    <a href="https://drive.google.com/file/d/1PNR1NpuRjgP8-RgcUFo8tsCrwTaf3b8n/view?usp=sharing" target="_blank">📜 View Internship Certificate ↗</a>
+                </div>
             </div>
 
             <div class="info-card">
@@ -608,6 +697,9 @@
                     <b>digital design using Verilog</b>. Developed projects like ALU, RAM,
                     Pipeline Processor, and Digital Filter Design.
                 </p>
+                <div class="workshop-links">
+                    <a href="https://drive.google.com/file/d/1IW0JwUHRqacYC9NYLield89XnNqkRfGZ/view?usp=sharing" target="_blank">📜 View Internship Certificate ↗</a>
+                </div>
             </div>
 
             <div class="info-card">
@@ -618,11 +710,13 @@
                     Built and published multiple projects including a portfolio website,
                     digital watch, currency converter, and finance tracker.
                 </p>
+                <div class="workshop-links">
+                    <a href="https://drive.google.com/file/d/1Vj04y3J2DmYZcEvs9i-3fdXXIFqQ2asx/view?usp=sharing" target="_blank">📜 View Internship Certificate ↗</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ACHIEVEMENTS -->
     <section id="achievements">
         <h2 class="section-title">Achievements</h2>
         <div class="grid-3">
@@ -643,7 +737,6 @@
         </div>
     </section>
 
-    <!-- WORKSHOPS + CERTIFICATIONS -->
     <section id="extras">
         <h2 class="section-title">Workshops & Certifications</h2>
         <div class="grid-2">
@@ -651,22 +744,44 @@
                 <h3>Workshops & Training</h3>
                 <ul>
                     <li>MSME Workshop on <b>VLSI & Entrepreneurship</b></li>
-                    <li>NPTEL Online Workshop on <b>Forecasting using Machine Learning Tools</b></li>
+                    <li>
+                        NPTEL Online Workshop on <b>Forecasting using Machine Learning Tools</b>
+                        <div class="workshop-links" style="margin-top: 6px;">
+                            <a href="https://drive.google.com/file/d/1aZf21NZQMRbvCWSEovi8ErK9RvalCbU3/view?usp=sharing" target="_blank">🔗 View Workshop Document ↗</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
             <div class="info-card">
                 <h3>Certifications</h3>
-                <ul>
-                    <li>NPTEL - <b>Digital Circuits</b></li>
-                    <li>NPTEL - <b>System Design Through Verilog</b></li>
-                    <li>NPTEL - <b>Design of Power Electronic Converters</b></li>
-                </ul>
+                 
+                <div class="nptel-wrapper">
+                    <p class="nptel-title">NPTEL </p>
+                    <div class="nptel-links">
+                        <a href="https://drive.google.com/file/d/1GCFZNohewn1YRmXdajcXZuR4gpy7lH8a/view?usp=sharing" target="_blank">📜 NPTEL Certificate 1 ↗</a>
+                        <a href="https://drive.google.com/file/d/1OTjPyPm1GQVGvGASjkhLsQHtEnqw0XSR/view?usp=sharing" target="_blank">📜 NPTEL Certificate 2 ↗</a>
+                        <a href="https://drive.google.com/file/d/1wliaVef014lq-3385U4sYe59R1cNBDMZ/view?usp=sharing" target="_blank">📜 NPTEL Certificate 3 ↗</a>
+                    </div>
+                </div>
+
+                <div class="cisco-wrapper">
+                    <p class="cisco-title">Cisco Networking Academy</p>
+                    <p style="font-size: 0.9rem; color: #d7ccff; margin-bottom: 10px;">Completed routing, switching, and foundational networking courses.</p>
+                    <div class="cisco-links">
+                        <a href="https://drive.google.com/file/d/1IrrYuzwp6Xalg0nDQgQQKFNK_XbNBt5S/view?usp=sharing" target="_blank">📜 Cisco Certificate 1 ↗</a>
+                        <a href="https://drive.google.com/file/d/1AZGx9fBePl8c5y-IMrx-ooV0fu0yiJJD/view?usp=sharing" target="_blank">📜 Cisco Certificate 2 ↗</a>
+                        <a href="https://drive.google.com/file/d/1WTbrtM78qBnIQ4Szq7OF8hjJcwmVe2jv/view?usp=sharing" target="_blank">📜 Cisco Certificate 3 ↗</a>
+                        <a href="https://drive.google.com/file/d/1fIdYN3T_Law6V9xgJw4hdiL5NYv6npmp/view?usp=sharing" target="_blank">📜 Cisco Certificate 4 ↗</a>
+                        <a href="https://drive.google.com/file/d/10ncTNdHbltKsgqtHwgVshbAckIAjejDE/view?usp=sharing" target="_blank">📜 Cisco Certificate 5 ↗</a>
+                        <a href="https://drive.google.com/file/d/1NpDvuhuz4XpQJ0ss3iIaxS7vYwONWykw/view?usp=sharing" target="_blank">📜 Cisco Certificate 6 ↗</a>
+                        <a href="https://drive.google.com/file/d/141BA3UTGgIOOVJ5xsaK3yMc3STQ4o7k9/view?usp=sharing" target="_blank">📜 Cisco Certificate 7 ↗</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
         <h2 class="section-title">Contact Me</h2>
         <div class="card contact-box">
@@ -680,25 +795,23 @@
 
             <div class="contact-links">
                 <a href="mailto:srijakorikana1909@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/srija-korikana-1083722b7/">LinkedIn</a>
-                <a href="https://github.com/Korikanasrija">GitHub</a>
-                <a href="https://www.codechef.com/users/korikana_srija">CodeChef</a>
-                <a href="https://leetcode.com/u/korikanasrija/">LeetCode</a>
+                <a href="https://www.linkedin.com/in/srija-korikana-1083722b7/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Korikanasrija" target="_blank">GitHub</a>
+                <a href="https://www.codechef.com/users/korikana_srija" target="_blank">CodeChef</a>
+                <a href="https://leetcode.com/u/korikanasrija/" target="_blank">LeetCode</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        © 2026 Sameera | Portfolio Website
+        © 2026 Srija | Portfolio Website
     </footer>
 
-    <!-- Typed JS -->
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
             strings: [
-                'ECE Student',
+                'ECE Under Graduate',
                 'Web Developer',
                 'Python Programmer',
                 'VLSI Enthusiast',
