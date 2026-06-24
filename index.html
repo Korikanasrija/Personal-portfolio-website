@@ -1,268 +1,715 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY PERSONAL PORTFOLIO</title>
+    <title>Sameera | Portfolio</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: rgb(5, 5, 66);
+            background: linear-gradient(135deg, #050542, #0d0d6d);
             color: white;
             font-family: "Poppins", sans-serif;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
-        
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
         nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            height: 80px;
-            background-color: rgb(25, 25, 124);
+            padding: 18px 60px;
+            background-color: rgba(18, 18, 90, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
         }
-        
+
+        .left {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
         nav ul {
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        
+
         nav ul li {
             list-style: none;
-            margin: 0 23px;
+            margin: 0 15px;
         }
-        
+
         nav ul li a {
             text-decoration: none;
             color: white;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: 0.3s;
         }
-        
-        nav ul li a:hover, nav ul li a.active-link {
-            font-size: 1.05rem;
-            color: lavender;
+
+        nav ul li a:hover {
+            color: #d4c7ff;
             border-bottom: 2px solid rgb(153, 68, 234);
             padding-bottom: 5px;
         }
-        
-        .left {
-            font-size: 1.5rem;
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
         }
 
-        main {
-            flex: 1;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            color: rgb(186, 120, 255);
+            margin-bottom: 40px;
+            font-weight: 700;
         }
 
-        /* Core Show/Hide Section Logic */
-        .content-section {
-            display: none; /* Hides the section by default */
-            animation: fadeIn 0.5s ease; /* Adds a clean transition effect */
-        }
-
-        .content-section.active {
-            display: block; /* Only displays when it has the active class */
-        }
-
-        /* Home section custom layouts */
+        /* Home */
         .firstSection {
+            min-height: 88vh;
             display: flex;
-            justify-content: space-around;
-            margin: 80px 0;
+            justify-content: space-between;
             align-items: center;
-        }
-        
-        .firstSection > div {
-            width: 45%;
-        }
-        
-        .leftSection { 
-            font-size: 3rem;
-        }
-        
-        .rightSection img {
-            width: 80%;     
-        }
-        
-        .purple {
-            color: rgb(153, 68, 234);
-        }
-        
-        #element {
-            color: rgb(153, 68, 234);
+            gap: 50px;
+            flex-wrap: wrap;
         }
 
-        /* Styles for secondary pages */
-        .inner-content {
-            padding: 60px 20px;
+        .leftSection {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .leftSection h1 {
+            font-size: 3rem;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .leftSection .purple {
+            color: rgb(186, 120, 255);
+        }
+
+        .leftSection p {
+            font-size: 1.1rem;
+            color: #d9d9ff;
+            margin-top: 18px;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        #element {
+            color: rgb(186, 120, 255);
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        .home-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: rgb(153, 68, 234);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: rgb(130, 47, 208);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid rgb(153, 68, 234);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: rgb(153, 68, 234);
+            transform: translateY(-2px);
+        }
+
+        .rightSection {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 280px;
+        }
+
+        .profile-photo {
+            width: 340px;
+            max-width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 4px solid rgba(255,255,255,0.9);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            backdrop-filter: blur(6px);
+        }
+
+        .about-text {
+            font-size: 1.08rem;
+            line-height: 1.9;
+            color: #f0f0ff;
+            text-align: center;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Education */
+        .timeline {
+            display: grid;
+            gap: 22px;
+        }
+
+        .timeline-item {
+            background: rgba(255,255,255,0.08);
+            padding: 24px;
+            border-left: 5px solid rgb(153, 68, 234);
+            border-radius: 14px;
+        }
+
+        .timeline-item h3 {
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .timeline-item span {
+            color: #d7ccff;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: #f0f0ff;
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-box {
+            background: rgba(255,255,255,0.08);
+            padding: 24px;
+            border-radius: 16px;
             text-align: center;
         }
 
-        .inner-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: rgb(153, 68, 234);
+        .skill-box h3 {
+            color: rgb(186, 120, 255);
+            margin-bottom: 18px;
         }
 
-        .inner-content p {
+        .skill-box ul {
+            list-style: none;
+        }
+
+        .skill-box ul li {
+            margin: 10px 0;
+            color: #f5f5ff;
+            font-size: 1rem;
+        }
+
+        /* Projects / Internships / Achievements */
+        .grid-2, .grid-3 {
+            display: grid;
+            gap: 25px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .project-card, .achievement-card, .info-card {
+            background: rgba(255,255,255,0.08);
+            padding: 24px;
+            border-radius: 16px;
+            transition: 0.3s ease;
+        }
+
+        .project-card:hover,
+        .achievement-card:hover,
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+        }
+
+        .project-card h3,
+        .achievement-card h3,
+        .info-card h3 {
+            color: rgb(186, 120, 255);
+            margin-bottom: 12px;
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-            line-height: 1.6;
         }
 
-        .skills-list {
+        .project-card p,
+        .achievement-card p,
+        .info-card p,
+        .info-card li {
+            color: #f4f4ff;
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* Contact */
+        .contact-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-box p {
+            font-size: 1.08rem;
+            line-height: 2;
+            color: #f5f5ff;
+        }
+
+        .contact-links {
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            gap: 20px;
             flex-wrap: wrap;
-            list-style: none;
-            margin-top: 30px;
+            gap: 16px;
         }
 
-        .skills-list li {
-            background-color: rgb(25, 25, 124);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 500;
-        }
-        
-        .footer {
-            display: flex ;
-            margin: 23px 122px;
+        .contact-links a {
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.1);
+            padding: 12px 18px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .contact-links a:hover {
+            background: rgb(153, 68, 234);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #d7d7ff;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav {
+                padding: 18px 25px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .leftSection h1 {
+                font-size: 2.4rem;
+            }
+
+            #element {
+                font-size: 1.6rem;
+            }
+
+            section {
+                padding: 70px 7%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .firstSection {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 20px;
+            }
+
+            .leftSection p {
+                margin: 18px auto 0;
+            }
+
+            .home-buttons {
+                justify-content: center;
+            }
+
+            .profile-photo {
+                width: 290px;
+                height: 380px;
+            }
+
+            nav ul li {
+                margin: 8px 10px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .leftSection h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Header -->
     <header>
         <nav>
-            <div class="left">Sameera's portfolio</div>
+            <div class="left">Srija's Portfolio</div>
             <div class="right">
                 <ul>
-                    <li><a href="#home" class="nav-link active-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>      
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Contact Me</a></li> 
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#internships">Internships</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#extras">More</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="content-section active">
-            <div class="firstSection">
-                <div class="leftSection">Hi, My name is <span class="purple">Sameera</span>
-                    <div>and I am</div>
-                    <span id="element"></span>
-                </div>
-                <div class="rightSection">
-                    <img src="bg.png" alt="Background Image">
+    <!-- HOME -->
+    <section id="home">
+        <div class="firstSection">
+            <div class="leftSection">
+                <h1>Hi, I'm <span class="purple">Korikana Srija</span></h1>
+                <div id="element"></div>
+                <p>
+                    Motivated and detail-oriented Electronics and Communication Engineering student
+                    with strong programming skills in <b>C, Python, and SQL</b>, along with a passion
+                    for software development, system design, and building efficient, scalable solutions.
+                </p>
+
+                <div class="home-buttons">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
                 </div>
             </div>
-        </section>
 
-        <section id="about" class="content-section">
-            <div class="inner-content">
-                <h2>About Me</h2>
-                <p>Hello! I am Sameera. I love creating beautiful, clean, and user-friendly digital architectures. I combine creative design perspectives with solid engineering fundamentals to construct memorable web experiences.</p>
+            <div class="rightSection">
+                <img src="srija_blazer.jpeg" alt="Sameera Profile Photo" class="profile-photo">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills" class="content-section">
-            <div class="inner-content">
-                <h2>My Skills</h2>
-                <p>Here are some tech stacks and tools I specialize in:</p>
-                <ul class="skills-list">
-                    <li>HTML5 & CSS3</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>Responsive Web Design</li>
-                    <li>Graphic Designing</li>
-                    <li>Python</li>
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p class="about-text">
+                I am <b>Korikana Srija (Sameera)</b>, an Electronics and Communication Engineering student at
+                <b>Vignan’s Institute of Information Technology</b> with a strong academic record and a growing
+                passion for software development, front-end design, VLSI, and problem solving.
+                I enjoy blending creativity with technical skills to build useful and impactful projects.
+                My interests span across <b>web development, Python applications, digital design, embedded systems,
+                and hardware-based innovations</b>. I am always eager to learn, take on challenges, and contribute
+                to meaningful technical solutions.
+            </p>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>B.Tech in Electronics and Communication Engineering</h3>
+                <span>2023 – Present | Vignan’s Institute of Information Technology (Autonomous), Duvvada</span>
+                <p><b>CGPA:</b> 9.33 (up to 3-1)</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Intermediate</h3>
+                <span>2021 – 2023 | Kendriya Vidyalaya No.1, NSB, Visakhapatnam</span>
+                <p><b>Percentage:</b> 84%</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Matriculation</h3>
+                <span>2020 – 2021 | Kendriya Vidyalaya No.1, NSB, Visakhapatnam</span>
+                <p><b>Percentage:</b> 89%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-box">
+                <h3>Programming</h3>
+                <ul>
                     <li>C</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
                 </ul>
             </div>
-        </section>
 
-        <section id="projects" class="content-section">
-            <div class="inner-content">
-                <h2>Projects</h2>
-                <p>Check out some of my recent assignments and project works:</p>
-                <div style="margin-top: 20px;">
-                    <h3>1. Personal Portfolio Website</h3>
-                    <p style="font-size: 1rem; color: #ccc;">Built using modern HTML, CSS properties, and custom interactive JavaScript features.</p>
-                    <h3>2.Hospital Management system</h3>
-                    <p style="font-size: 1rem; color: #ccc;">Built using Python with Database connectivity.</p>
-                </div>
+            <div class="skill-box">
+                <h3>Hardware / Domain</h3>
+                <ul>
+                    <li>Verilog</li>
+                    <li>VHDL</li>
+                    <li>SystemVerilog</li>
+                    <li>PCB Design</li>
+                    <li>VLSI Basics</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="contact" class="content-section">
-            <div class="inner-content">
-                <h2>Contact Me</h2>
-                <p>Want to work together or have questions? Reach out anytime!</p>
-                <p style="font-weight: 600;">Email: srijakorikana@gmail.com</p>
+            <div class="skill-box">
+                <h3>Tools</h3>
+                <ul>
+                    <li>VS Code</li>
+                    <li>Xilinx Vivado</li>
+                    <li>CST Studio</li>
+                    <li>KiCad</li>
+                    <li>Arduino IDE</li>
+                    <li>MySQL</li>
+                </ul>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer">
-            <div class="footer-first"></div>
-            <div class="footer-second"></div>
-            <div class="footer-third"></div>
-            <div class="footer-fourth"></div>
         </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid-2">
+            <div class="project-card">
+                <h3>Smart Safety Pendant System</h3>
+                <p>
+                    Developed an emergency alert system using <b>SIM800L</b> and a <b>GPS module</b> for
+                    real-time location tracking and communication. Implemented dual-button functionality
+                    for sending alerts and making emergency calls during emergencies.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Hospital Management System</h3>
+                <p>
+                    Built a <b>Python-based hospital management system</b> with <b>MySQL database connectivity</b>
+                    to manage doctor and patient records efficiently. Included both Admin and User modes
+                    for better usability and record handling.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+                <p>
+                    Designed and developed a responsive personal portfolio using <b>HTML, CSS, and JavaScript</b>
+                    to showcase education, projects, achievements, and technical skills in a clean and
+                    interactive format.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>VLSI Design Projects</h3>
+                <p>
+                    Designed and implemented digital systems such as <b>ALU, RAM, Pipeline Processor,
+                    and Digital Filter</b> using <b>Verilog</b>. These projects focus on digital logic design,
+                    simulation, and hardware implementation concepts.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Dual Band Microstrip Patch Antenna</h3>
+                <p>
+                    Designed a dual-band microstrip patch antenna for <b>mm-wave applications</b> in
+                    <b>IoT devices and 5G/6G communication systems</b>. This project strengthened
+                    understanding of RF design and communication systems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERNSHIPS -->
+    <section id="internships">
+        <h2 class="section-title">Internship Experience</h2>
+        <div class="grid-3">
+            <div class="info-card">
+                <h3>HPCL Intern</h3>
+                <p><b>May 2026 – June 2026</b></p>
+                <p>
+                    Completed a six-week on-site internship focused on
+                    <b>Instrumentation and Control Systems</b>.
+                </p>
+                <ul>
+                    <li>CDU 3 Unit</li>
+                    <li>CPP Unit</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>VLSI Design Intern</h3>
+                <p><b>May 2025 – June 2025</b></p>
+                <p>
+                    Completed a one-month virtual internship focused on
+                    <b>digital design using Verilog</b>. Developed projects like ALU, RAM,
+                    Pipeline Processor, and Digital Filter Design.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Front-End Developer Intern</h3>
+                <p><b>May 2026 – June 2026</b></p>
+                <p>
+                    Completed a six-week virtual internship in <b>front-end development</b>.
+                    Built and published multiple projects including a portfolio website,
+                    digital watch, currency converter, and finance tracker.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+        <h2 class="section-title">Achievements</h2>
+        <div class="grid-3">
+            <div class="achievement-card">
+                <h3>2nd Position - Circuitrix Technical Contest</h3>
+                <p>Won 2nd Position in <b>Circuitrix Technical Contest</b> at <b>VISTA 2K24</b> (Campus Level).</p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>Top 5 - ELECXA’24</h3>
+                <p>Achieved <b>Top 5 Position</b> in <b>ELECXA’24</b> at <b>SRM Institute, Chennai</b> (National Level).</p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>1st Position - Circuitrix Technical Contest</h3>
+                <p>Won <b>1st Position</b> in <b>Circuitrix Technical Contest</b> at <b>VISTA 2K25</b> (Campus Level).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKSHOPS + CERTIFICATIONS -->
+    <section id="extras">
+        <h2 class="section-title">Workshops & Certifications</h2>
+        <div class="grid-2">
+            <div class="info-card">
+                <h3>Workshops & Training</h3>
+                <ul>
+                    <li>MSME Workshop on <b>VLSI & Entrepreneurship</b></li>
+                    <li>NPTEL Online Workshop on <b>Forecasting using Machine Learning Tools</b></li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Certifications</h3>
+                <ul>
+                    <li>NPTEL - <b>Digital Circuits</b></li>
+                    <li>NPTEL - <b>System Design Through Verilog</b></li>
+                    <li>NPTEL - <b>Design of Power Electronic Converters</b></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="card contact-box">
+            <p>
+                I’m always open to learning opportunities, internships, collaborations, and exciting technical projects.
+                Feel free to reach out!
+            </p>
+            <p><b>Email:</b> srijakorikana1909@gmail.com</p>
+            <p><b>Phone:</b> 9392319573</p>
+            <p><b>Location:</b> Visakhapatnam, Andhra Pradesh</p>
+
+            <div class="contact-links">
+                <a href="mailto:srijakorikana1909@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/srija-korikana-1083722b7/">LinkedIn</a>
+                <a href="https://github.com/Korikanasrija">GitHub</a>
+                <a href="https://www.codechef.com/users/korikana_srija">CodeChef</a>
+                <a href="https://leetcode.com/u/korikanasrija/">LeetCode</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Sameera | Portfolio Website
     </footer>
 
+    <!-- Typed JS -->
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-            strings: ['Web developer', 'Graphic designer', 'Web designer'],
-            typeSpeed: 50,
-            loop: true // Added loop so the animation keeps playing
+            strings: [
+                'ECE Student',
+                'Web Developer',
+                'Python Programmer',
+                'VLSI Enthusiast',
+                'Frontend Developer'
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 1200,
+            loop: true
         });
     </script>
 
-    <script>
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevents page from jumping or reloading
-
-                // 1. Remove active underline status from all links
-                document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active-link'));
-                
-                // 2. Add highlight state to clicked navigation item
-                this.classList.add('active-link');
-
-                // 3. Remove active presentation styling from current sections
-                document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-
-                // 4. Retrieve targeted ID string value and make targeted element visible
-                const targetId = this.getAttribute('href'); 
-                document.querySelector(targetId).classList.add('active');
-            });
-        });
-    </script>
 </body>
-
 </html>
